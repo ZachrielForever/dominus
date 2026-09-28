@@ -27,7 +27,6 @@ cp -avf "/ctx/system_files"/. /
 dnf5 install -y \
     btop \
     git \
-    htop \
     jq \
     micro \
     nano \
@@ -38,7 +37,14 @@ dnf5 install -y \
     tmux \
     tree \
     wget \
-    yq
+    yq \
+    fastfetch \
+    bat \
+    starship 
+
+# Console fonts for physical display
+dnf5 install -y \
+    terminus-fonts
 
 # System diagnostics and monitoring
 dnf5 install -y \
@@ -46,7 +52,6 @@ dnf5 install -y \
     dmidecode \
     ethtool \
     file \
-    glances \
     iotop \
     lm_sensors \
     lsof \
@@ -56,7 +61,8 @@ dnf5 install -y \
     strace \
     sysstat \
     tcpdump \
-    bind-utils
+    bind-utils \
+    fzf
 
 # Storage and disk utilities
 dnf5 install -y \
