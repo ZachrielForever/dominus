@@ -19,7 +19,7 @@ dnf5 install -y \
     python3 \
     qstat \
     rsync \
-    jq 
+    jq
 
 # Tier 2: diagnostic artillery for when containers misbehave
 dnf5 install -y \
@@ -37,11 +37,23 @@ dnf5 install -y \
     tcpdump \
     chrony \
     zstd \
-    pigz 
-
+    pigz
 
 # SELinux tooling for the httpd_sys_content_t / semanage / restorecon rituals
 dnf5 install -y policycoreutils-python-utils
+
+# SELinux troubleshooting backend for Cockpit's SELinux page
+dnf5 install -y setroubleshoot-server
+
+# Cockpit - FULL flavor, not the lite experience
+dnf5 install -y \
+    cockpit \
+    cockpit-storaged \
+    cockpit-networkmanager \
+    cockpit-podman \
+    cockpit-packagekit \
+    cockpit-terminal \
+    cockpit-sosreport
 
 # Overlay networking - the lifeline to Helius
 dnf5 install -y tailscale
@@ -53,3 +65,6 @@ systemctl enable tailscaled
 
 # Podman socket for rootless management (template default, kept)
 systemctl enable podman.socket
+
+# Cockpit web UI (port 9090) - socket-activated, no idle cost
+systemctl enable cockpit.socket
