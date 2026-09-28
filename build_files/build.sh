@@ -25,7 +25,10 @@ cp -avf "/ctx/system_files"/. /
 
 # Core shell and productivity tools
 dnf5 install -y \
+    bat \
     btop \
+    fastfetch \
+    fzf \
     git \
     jq \
     micro \
@@ -37,10 +40,11 @@ dnf5 install -y \
     tmux \
     tree \
     wget \
-    yq \
-    fastfetch \
-    bat \
-    starship 
+    yq
+
+# Starship prompt (not in official repos; lives in COPR)
+dnf5 copr enable -y atim/starship
+dnf5 install -y starship
 
 # Console fonts for physical display
 dnf5 install -y \
