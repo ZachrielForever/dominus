@@ -37,10 +37,8 @@ dnf5 install -y \
     tcpdump \
     chrony \
     zstd \
-    pigz \
-    less \
-    awk \
-    sed
+    pigz 
+
 
 # SELinux tooling for the httpd_sys_content_t / semanage / restorecon rituals
 dnf5 install -y policycoreutils-python-utils
