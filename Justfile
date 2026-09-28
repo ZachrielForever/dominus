@@ -183,7 +183,7 @@ image_name $target_image=image_name:
 # Rootful image loading (bridging user/root podman storage)
 # -----------------------------------------------------------------------------
 
-[_internal]
+[group('Internal')]
 _rootful_load_image $target_image=image_name $tag=default_tag:
     #!/usr/bin/env bash
     set -euxo pipefail
