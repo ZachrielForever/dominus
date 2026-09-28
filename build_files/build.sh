@@ -18,7 +18,8 @@ dnf5 install -y \
     micro \
     python3 \
     qstat \
-    rsync
+    rsync \
+    jq 
 
 # Tier 2: diagnostic artillery for when containers misbehave
 dnf5 install -y \
@@ -28,7 +29,18 @@ dnf5 install -y \
     tree \
     bind-utils \
     nmap-ncat \
-    lm_sensors
+    lm_sensors \
+    smartmontools \
+    glances \
+    iperf3 \
+    mtr \
+    tcpdump \
+    chrony \
+    zstd \
+    pigz \
+    less \
+    awk \
+    sed
 
 # SELinux tooling for the httpd_sys_content_t / semanage / restorecon rituals
 dnf5 install -y policycoreutils-python-utils
