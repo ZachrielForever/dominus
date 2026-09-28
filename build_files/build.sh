@@ -156,8 +156,7 @@ dnf5 install -y \
     cockpit-networkmanager \
     cockpit-podman \
     cockpit-sosreport \
-    cockpit-storaged \
-    cockpit-terminal
+    cockpit-storaged 
 
 # Overlay networking
 dnf5 install -y \
