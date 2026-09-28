@@ -39,3 +39,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
+
+RUN bootc container set-kernel-args \
+    --append video=DP-1:1920x1080@60 \
+    --append vga=current
