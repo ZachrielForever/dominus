@@ -114,7 +114,7 @@ build $target_image=image_name $tag=default_tag:
 # Shell hygiene
 # -----------------------------------------------------------------------------
 
-[lint]
+[group('Lint')]
 lint:
     #!/usr/bin/env bash
     set -eoux pipefail
@@ -124,7 +124,7 @@ lint:
     fi
     find . -iname "*.sh" -type f -exec shellcheck "{}" ';'
 
-[lint]
+[group('Lint')]
 format:
     #!/usr/bin/env bash
     set -eoux pipefail
