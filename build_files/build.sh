@@ -157,6 +157,7 @@ dnf5 install -y \
 dnf5 install -y \
     checkpolicy \
     policycoreutils-python-utils \
+    k3s-selinux \
     setools-console \
     setroubleshoot-server
 
